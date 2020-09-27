@@ -29,6 +29,8 @@ namespace DatingApp.API.Mapper
             });
 
             CreateMap<Photo, PhotosForDetailsVM>().ReverseMap();
+            CreateMap<User, UserForUpdateVM>().ReverseMap();
+
 
 
 
