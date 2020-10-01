@@ -16,7 +16,7 @@ export const appRoutes:Routes=[
     { path:'home',component:HomeComponent},
     { path:'members',component:MemberListComponent,canActivate:[AuthGuard],resolve:{users:MemberListResolver}},
     { path:'members/:id',component:MemberDetailComponent,canActivate:[AuthGuard],resolve:{users:MemberDetailResolver}},
-    { path:'member/edit',component:MemberEditComponent,canActivate:[AuthGuard],resolve:{users:MemberEditResolver},canDeactivate:[PreventUnsavedChanges]},
+    { path:'member/edit',component:MemberEditComponent,canActivate:[AuthGuard],resolve:{users:MemberEditResolver}},
     { path:'messages',component:MessagesComponent,canActivate:[AuthGuard]},
     { path:'lists',component:ListsComponent,canActivate:[AuthGuard]},
     { path:'**',redirectTo:'home',pathMatch:'full'},
