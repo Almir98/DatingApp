@@ -51,6 +51,9 @@ namespace DatingApp.API
                 o.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
             });
 
+            services.Configure<CloudinarySettings>(Configuration.GetSection("CloudinarySettings"));
+
+
             // CORS Policy 
             services.AddCors(options =>
             {
