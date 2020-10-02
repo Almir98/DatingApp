@@ -33,7 +33,7 @@ namespace DatingApp.API.Controllers
             return Ok(_mapper.Map<IEnumerable<UserForListVM>>(await _service.GetUsers()));
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name="GetUser")]
         public async Task<IActionResult> GetUser(int id)
         {
             return Ok(_mapper.Map<UserForDetailsVM>( await _service.GetUser(id)));
