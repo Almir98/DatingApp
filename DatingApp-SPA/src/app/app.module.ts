@@ -40,7 +40,6 @@ import { MemberEditResolver } from './_resolvers/member-edit.resolver';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 
 
-
 @NgModule({
    declarations: [
       AppComponent,
@@ -53,7 +52,7 @@ import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
       MemberCardComponent,
       MemberDetailComponent,
       MemberEditComponent,
-      PhotoEditorComponent
+      PhotoEditorComponent,
       
    ],
    imports: [

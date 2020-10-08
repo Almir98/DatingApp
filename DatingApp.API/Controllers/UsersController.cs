@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using AutoMapper;
+using DatingApp.API.Helpers;
 using DatingApp.API.Interface;
 using DatingApp.API.Models;
 using DatingApp.API.ViewModels;
@@ -28,9 +29,13 @@ namespace DatingApp.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetUsers()
+        public async Task<IActionResult> GetUsers(UserParams userParams)
         {
-            return Ok(_mapper.Map<IEnumerable<UserForListVM>>(await _service.GetUsers()));
+            var users = await _service.GetUsers(userParams);
+            var usersReturn = _mapper.Map<IEnumerable<UserForListVM>>(users);
+
+            Response.AddPagination(users.CurrentPage,users.PageSize,users.TotalCount,users.TotalPage);
+            return Ok(usersReturn);
         }
 
         [HttpGet("{id}", Name="GetUser")]
